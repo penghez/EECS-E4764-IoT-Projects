@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
                     Intent intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
                     intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
                     intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.ENGLISH);
-                   intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Start recording");
+                    intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Start recording");
                     // only get one result from Google
                     intent.putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 1);
                     startActivityForResult(intent, VOICE_RECOGNITION_REQUEST_CODE);
@@ -90,8 +90,8 @@ public class MainActivity extends Activity {
                 urlPath = urlText.getText().toString();
                 String path = "http://" + urlPath + "/?msg=";
                 if (res.indexOf("time") != -1) {
-                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    res = df.format(new Date());
+                    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+                    res = "time=" + df.format(new Date());
                 }
                 sendGet(path, res);
             }
