@@ -110,12 +110,12 @@ while True:
             fail_response = "HTTP/1.1 501 Implemented\r\n\r\nPlease attach msg!"
             cl.send(str.encode(fail_response))
 
-        cl.close()
-
     except:
         if oled_on and show_time_now:
             show_time()
 
+    finally:
+        cl.close()
 
 
 
