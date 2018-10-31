@@ -1,3 +1,8 @@
+# EECSE4764 Lab6
+# Group 6: NetSpeed Fast
+# Group members: Ruochen You (ry2349), Penghe Zhang (pz2244), Linnan Li(ll3235)
+# Date: 10/31/2018
+
 import network
 import machine
 import ssd1306
